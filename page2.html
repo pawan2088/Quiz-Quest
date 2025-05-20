@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Quest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="big-container-pg2">
+        <div class="container-pg2">
+            <h2>Quiz Quest</h2>
+            <div class="divider-pg2"></div>
+            
+            <div class="quiz-info">
+                <div class="timer">
+                    <i class="fas fa-clock"></i> <span id="time-left">30</span>
+                </div>
+                <div class="progress-info">
+                    Question <span id="current-question">0</span> of <span id="total-questions">0</span>
+                </div>
+            </div>
+            
+            <div class="question-pg2">Loading question...</div>
+            <div class="options-pg2">
+                <button class="opt-pg2 hover-eff">Loading options...</button>
+                <button class="opt-pg2 hover-eff">Loading options...</button>
+                <button class="opt-pg2 hover-eff">Loading options...</button>
+                <button class="opt-pg2 hover-eff">Loading options...</button>
+            </div>
+            <button id="next-btn-pg2">
+                Next
+            </button>
+            
+            <div id="loading" class="loading-container">
+                <span class="loader"></span>
+                <div class="loading-text">Loading Questions...</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+    <script src="app2.js"></script>
+</body>
+</html>

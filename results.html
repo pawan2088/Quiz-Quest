@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results - Quiz Quest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="big-container-pg2">
+        <div class="container-pg2 results-container">
+            <h2 class="results-title">Quiz Results</h2>
+            <div class="divider-pg2"></div>
+            
+            <div class="score-display">
+                <span id="final-score">0</span>%
+            </div>
+            
+            <div class="score-details">
+                <div class="score-item">
+                    <h3>Category</h3>
+                    <p id="category-display">General Knowledge</p>
+                </div>
+                <div class="score-item">
+                    <h3>Difficulty</h3>
+                    <p id="difficulty-display">Easy</p>
+                </div>
+                <div class="score-item">
+                    <h3>Correct Answers</h3>
+                    <p id="correct-display" class="correct-count">0</p>
+                </div>
+                <div class="score-item">
+                    <h3>Incorrect Answers</h3>
+                    <p id="incorrect-display" class="incorrect-count">0</p>
+                </div>
+            </div>
+            
+            <div id="result-message" class="paragraph">
+               
+            </div>
+            
+            <div class="action-buttons">
+                <button class="action-btn restart-btn" id="play-again-btn">
+                    <i class="fas fa-redo"></i> Play Again
+                </button>
+                <button class="action-btn home-btn" id="home-btn">
+                    <i class="fas fa-home"></i> Home
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            const score = sessionStorage.getItem("totalScore") || "0";
+            const correctAnswers = sessionStorage.getItem("correctAnswers") || "0";
+            const incorrectAnswers = sessionStorage.getItem("incorrectAnswers") || "0";
+            const category = sessionStorage.getItem("category") || "General Knowledge";
+            const difficulty = sessionStorage.getItem("mode") || "easy";
+            const totalQuestions = sessionStorage.getItem("totalQuestions") || "0";
+           
+            document.getElementById("final-score").textContent = score;
+            document.getElementById("correct-display").textContent = correctAnswers;
+            document.getElementById("incorrect-display").textContent = incorrectAnswers;
+            document.getElementById("category-display").textContent = category;
+            document.getElementById("difficulty-display").textContent = difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
+            
+          
+            const resultMessage = document.getElementById("result-message");
+            let message = "";
+            
+            if (parseInt(score) >= 80) {
+                message = "Excellent! You're a quiz master! 🏆";
+            } else if (parseInt(score) >= 60) {
+                message = "Great job! You know your stuff! 👍";
+            } else if (parseInt(score) >= 40) {
+                message = "Good effort! Keep learning! 📚";
+            } else {
+                message = "Nice try! Practice makes perfect! 💪";
+            }
+            
+            resultMessage.textContent = message;
+            
+           
+            document.getElementById("play-again-btn").addEventListener("click", () => {
+                
+                window.location.href = "index.html#C4";
+            });
+            
+            document.getElementById("home-btn").addEventListener("click", () => {
+                window.location.href = "index.html";
+            });
+        });
+    </script>
+</body>
+</html>
