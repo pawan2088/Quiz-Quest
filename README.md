@@ -21,12 +21,6 @@
 
 ---
 
-## 📸 Preview
-
-![screenshot](https://cdn-icons-png.flaticon.com/512/2641/2641313.png)
-
----
-
 ## 🛠️ Tech Stack
 
 - **HTML5**
